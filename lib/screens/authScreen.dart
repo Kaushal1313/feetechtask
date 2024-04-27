@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/screens/home.dart';
+import 'package:flutter_application_2/widgets/appcolors.dart';
 
 class AuthenticationScreen extends StatefulWidget {
   @override
@@ -55,7 +56,14 @@ class _AuthenticationScreenState extends State {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Firebase Auth Demo'),
+        elevation: 0,
+        title: Text(
+          'FeelTech Login',
+          style: TextStyle(
+            fontFamily: 'Roboto',
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
@@ -64,30 +72,65 @@ class _AuthenticationScreenState extends State {
           children: [
             TextField(
               controller: _emailController,
-              decoration: InputDecoration(labelText: 'Email'),
+              decoration: InputDecoration(
+                labelText: 'Email',
+                prefixIcon: Icon(Icons.email),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+              ),
             ),
             SizedBox(height: 12.0),
             TextField(
               controller: _passwordController,
-              decoration: InputDecoration(labelText: 'Password'),
+              decoration: InputDecoration(
+                labelText: 'Password',
+                prefixIcon: Icon(Icons.lock),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+              ),
               obscureText: true,
             ),
             SizedBox(height: 12.0),
             Text(
               _errorMessage,
-              style: TextStyle(color: Colors.red),
+              style: TextStyle(
+                color: Colors.red,
+                fontStyle: FontStyle.italic,
+              ),
             ),
             SizedBox(height: 12.0),
-            Row(
+            Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                ElevatedButton(
-                  onPressed: _signUp,
-                  child: Text('Sign Up'),
+                Container(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: _signUp,
+                    child: Text('Sign Up'),
+                    style: ElevatedButton.styleFrom(
+                      primary: CustomColors.red,
+                      textStyle: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
                 ),
-                ElevatedButton(
-                  onPressed: _signIn,
-                  child: Text('Sign In'),
+                Container(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: _signIn,
+                    child: Text('Sign In'),
+                    style: ElevatedButton.styleFrom(
+                      primary: CustomColors.green,
+                      textStyle: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),

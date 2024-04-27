@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Firebase Auth Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -23,5 +24,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-
