@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "508612179286",
+    "project_id": "crude-opration-project",
+    "storage_bucket": "crude-opration-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:508612179286:android:4c767f837bd6d8899752f7",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAExAku13fkv5CRfMjoJMiawNR7cBeo3yA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
